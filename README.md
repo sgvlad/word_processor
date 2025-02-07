@@ -19,12 +19,12 @@ Application used to get the top N words by their occurrence from a file.
 ## Installation and build
 ***
 ```
-$ git clone git@github.com:vstoian/word-processor.git
+$ git clone git@github.com:sgvlad/word_processor.git
 $ run Main.java
 ```
 ## Assumptions
 ***
-- The program is executed on a machine with enough memory to accommodate small-medium files in memory.
+- The program should be executed on a machine with enough memory to accommodate small-medium files in memory.
 - The language of the file is English and does not contain corrupted or non UTF-8 characters.
 - Contractions will be separated and counted. e.G: "It's" and "it is" is the same thing.
 - The output values are not ordered. If they required to be ordered they just need to be sorted.
