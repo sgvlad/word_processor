@@ -6,8 +6,12 @@ import code4nord.reader.FileReader;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
+
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
     /**
      * Number of words to be displayed.
      */
@@ -21,6 +25,7 @@ public class Main {
         WordOccurrenceCounter wordOccurrenceCounter = new WordOccurrenceCounter(fileReader);
         Map<Word, Occurrence> wordByOccurrenceMap = wordOccurrenceCounter.countWords(Path.of(FILE_PATH));
         List<WordOccurrenceEntry> wordOccurrences = wordOccurrenceCounter.getWordsWithMostOccurrences(wordByOccurrenceMap, NUMBER_OF_WORDS);
+        LOGGER.log(Level.INFO, "The results of the {0} words with most occurrences are:", NUMBER_OF_WORDS);
         wordOccurrences.forEach(System.out::println);
 
     }

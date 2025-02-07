@@ -20,7 +20,9 @@ public class FileReader {
      */
     public List<String> readAllLines(Path path) {
         try {
-            return Files.readAllLines(path, StandardCharsets.UTF_8);
+            List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+            LOGGER.log(Level.INFO, "Successfully read {0} lines from file: {1}", new Object[]{lines.size(), path});
+            return lines;
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "Error while reading the file.", e);
         }

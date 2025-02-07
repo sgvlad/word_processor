@@ -1,16 +1,18 @@
 package code4nord;
 
-import code4nord.model.WordModel.*;
+import code4nord.model.WordModel.Occurrence;
+import code4nord.model.WordModel.Word;
+import code4nord.model.WordModel.WordOccurrenceEntry;
 import code4nord.reader.FileReader;
 
 import java.nio.file.Path;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 public class WordOccurrenceCounter {
 
-    private static final Logger LOGGER = Logger.getLogger(WordOccurrenceCounter.class.getName());
 
     private final FileReader fileReader;
 
@@ -27,7 +29,6 @@ public class WordOccurrenceCounter {
      */
     public Map<Word, Occurrence> countWords(Path path) {
         List<String> lines = this.fileReader.readAllLines(path);
-        LOGGER.log(Level.INFO, "Parsed " + lines.size() + " lines.");
         return lines.stream().flatMap(Word::of).collect(Word.groupByWordAndOccurrence());
     }
 
