@@ -14,7 +14,7 @@ Application used to get the top N words by their occurrence from a file.
 ***
 * [Java](https://openjdk.java.net/projects/jdk/11/): Version 21
 * [JUnit](https://junit.org/junit5/): Version 5
-* [JUnit](https://site.mockito.org/): Version 5.15.2
+* [Mockito](https://site.mockito.org/): Version 5.15.2
 
 ## Installation and build
 ***
